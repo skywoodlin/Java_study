@@ -1,8 +1,5 @@
 package basic.Date;
 
-import com.google.common.annotations.VisibleForTesting;
-
-import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -37,7 +34,7 @@ public class CalendarUtil {
     }
 
     /**
-     * 计算两个日期相差天数, 小数类型
+     * 计算两个日期相差天数, 值为小数类型
      */
     public static double countFloatInterval(Calendar startDate, Calendar endDate) {
         //确保startday在endday之前
@@ -55,8 +52,7 @@ public class CalendarUtil {
     }
 
     /**
-     * 计算两个日期相差天数, 顺序没有关系
-     *
+     * 计算两个日期相差天数, 顺序没有关系， 结果天数为int型， 根据mode的不同实行四舍五入， 向上， 向下取整
      * @param startDate
      * @param endDate
      * @param mode CalendarUtil.round      四舍五入
@@ -94,7 +90,14 @@ public class CalendarUtil {
     }
 
     /**
-     * 计算两个字符串型的日期间隔天数
+     * 计算两个字符串型的日期间隔天数， 前后顺序无所谓
+     * 将String转Date， 再转Calendar
+     * @param date1
+     * @param date2
+     * @param format 字符串格式： SimpleDateFormat可用的字符串格式
+     * @param mode
+     * @return
+     * @throws Exception
      */
     public static int countIntervalForStringTypeDate(String date1, String date2, String format, String mode) throws Exception{
         Date dateTmp1= null;

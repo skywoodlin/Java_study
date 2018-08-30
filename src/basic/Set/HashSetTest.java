@@ -35,11 +35,14 @@ public class HashSetTest {
         Student s1 = new Student(1);
         Student s2 = new Student(1);
         Student s3 = new Student(2);
-        set.add(s1);
-        set.add(s2);
-        set.add(s3);
+        System.out.println(set.add(s1));
+        System.out.println(set.add(s2));
+        System.out.println(set.add(s3));
+
         for (Student s : set) {
             System.out.println(s);
         }
+
+        System.out.println(set.toString());
     }
 }

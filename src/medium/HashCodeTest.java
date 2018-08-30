@@ -13,5 +13,15 @@ public class HashCodeTest {
         System.out.println("a: " + aHashCode);
         System.out.println("b: " + bHashCode);
         System.out.println(aHashCode==bHashCode);
+
+        String c = "123456asdffds";
+        String d = new String("123456asdffds");
+        int cHashCode = c.hashCode();
+        int dHashCode = d.hashCode();
+        System.out.println("c: " + cHashCode);
+        System.out.println("d: " + dHashCode);
+        System.out.println(cHashCode==dHashCode);
+
+
     }
 }

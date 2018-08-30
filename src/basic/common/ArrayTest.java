@@ -22,6 +22,7 @@ public class ArrayTest {
         String[] array2 = new String[]{"黄渤", "张艺兴", "孙红雷", "小猪", "牙哥", "黄磊"};
 
         String[] array = new String[5];
+        System.out.println(array.length);
 
 
         //查看数组的长度
@@ -44,6 +45,12 @@ public class ArrayTest {
         //从array中创建arraylist
         ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(array1));
         System.out.println("array to arrayList: " + arrayList);
+
+        List<String> arrayList2 = Arrays.asList(array1);
+        System.out.println("array to arrayList2: " + arrayList2);
+
+
+
 
         //数组中是否包含某一个值
         String a = "马超";

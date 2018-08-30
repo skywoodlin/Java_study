@@ -1,6 +1,6 @@
 package basic.Json;
 
-import basic.Vo.Person;
+import Vo.Person;
 
 /**
  * Created by xjlin on 2017/5/31.

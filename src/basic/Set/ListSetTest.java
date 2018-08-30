@@ -4,11 +4,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ * Created by xjlin on 2017/5/9.
  * HashSet, 判断1. hashCode()  2. equals()是否相同， 相同则认为是同一个对象， 不会添加到hashSet中
  * 我们可以根据自己的业务对上面两个函数进行override
- * Created by xjlin on 2017/5/9.
  * HashSet使用的是相当复杂的方式来存储元素的，使用HashSet能够最快的获取集合中的元素，
- * 效率非常高（以空间换时间）。会根据hashcode和equals来庞端是否是同一个对象，如果hashcode一样，
+ * 效率非常高（以空间换时间）。会根据hashcode和equals来判断是否是同一个对象，如果hashcode一样，
  * 并且equals返回true，则是同一个对象，不能重复存放。
  */
 public class ListSetTest {

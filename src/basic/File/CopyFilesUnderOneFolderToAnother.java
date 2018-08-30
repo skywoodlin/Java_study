@@ -11,7 +11,7 @@ import java.io.FileOutputStream;
 public class CopyFilesUnderOneFolderToAnother {
     public static void main(String[] args) {
         try {
-            CopyFilesUnderOneFolderToAnother.copyFilesUnderOneFolderToAnother("d:\\a", "d:\\b");
+            CopyFilesUnderOneFolderToAnother.copyFilesUnderOneFolderToAnother("d:\\a\\", "d:\\b\\");
         }catch (Exception e) {
             e.printStackTrace();
         }

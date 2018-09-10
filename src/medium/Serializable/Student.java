@@ -10,11 +10,22 @@ public class Student implements Serializable{
     private int id;
     private String name;
     private String sex;
+    private int age;
 
     public String getSex(){
-
         return sex;
     }
+
+    public Student(String name, int age) {
+        super();
+        this.name = name;
+        this.age = age;
+    }
+
+    public Student(){
+        super();
+    }
+
 
     public void setSex(String sex){
         this.sex = sex;

@@ -1,4 +1,4 @@
-package basic.List;
+package basic.collections.List;
 
 /**
  * Created by xjlin on 2017/6/1.

@@ -18,6 +18,8 @@ public class MapDemo2{
         map.put("d", "xiaojie_d");
         map.put("e", "xiaojie_e");
 
+        System.out.println(map); //{a=xiaojie_a, b=xiaojie_b, c=xiaojie_c, d=xiaojie_d, e=xiaojie_e}
+
 
         /**
          * 取出map中的所有元素：

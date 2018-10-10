@@ -26,15 +26,10 @@ Lock接口就是同步的替代。
 现在将监视器方法封装到了Condition对象中。
 方法名为：await  signal  signalAll
 
-
 监视器对象Condition如何和Lock绑定呢？
 可以通过Lock接口的newCondition()方法完成。
 
 但是，问题依据，一样唤醒了本方。效率仍旧低！
-
-
-
-
 */
 
 import java.util.concurrent.locks.*;

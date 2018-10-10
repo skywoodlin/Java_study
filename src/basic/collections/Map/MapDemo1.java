@@ -22,6 +22,6 @@ public class MapDemo1{
         System.out.println(map.put(5, "xiaoqiang6")); //xiaoqiang5
         System.out.println(map.get(5)); //xiaoqiang6
 
-        System.out.println(map);
+        System.out.println(map);  //直接打印map会将所有key=value打印出来
     }
 }

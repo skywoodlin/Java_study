@@ -38,6 +38,7 @@ class SaleTicket2 implements Runnable{
              */
             synchronized(object){
                 if(tickets > 0){
+                    int tmp = tickets;
                     /**
                      *  解决思想： 只要保证多条操作对共享变量访问的代码在某个时间段， 只能被一条线程所执行
                      *  同步的前提： 要用一个公用的锁， 即object是同一个， 不能每个线程都new 一个
@@ -46,11 +47,12 @@ class SaleTicket2 implements Runnable{
                      *           }
                      */
                     try{
+//                        object.wait(20);  //让每个线程到这里稍微停一下  模拟产生线程同步问题
                         Thread.sleep(10);  //让线程到这里稍微停一下  模拟产生线程同步问题
                     }catch(InterruptedException e){
                         e.printStackTrace();
                     }
-                    System.out.println(Thread.currentThread().getName() + "......" + tickets--);
+                    System.out.println(Thread.currentThread().getName() + "......" + tickets-- + "...origin： " + tmp);
 
                 }else{
                     Thread.currentThread().stop();

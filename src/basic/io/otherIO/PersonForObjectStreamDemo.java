@@ -6,8 +6,14 @@ import java.io.Serializable;
  * Created by xjlin on 2018/10/19.
  */
 public class PersonForObjectStreamDemo implements Serializable{
+    private static final long serialVersionUID = 1L;
+
+
     private String name;
-    private int age;
+    private transient int age;
+
+//    public PersonForObjectStreamDemo(){
+//    }
 
     public PersonForObjectStreamDemo(String name, int age){
         this.name = name;

@@ -7,6 +7,7 @@ import java.util.Objects;
 
 /**
  * Created by xjlin on 2018/8/28.
+ * 暴力访问
  */
 public class GetFieldValue{
     public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException{
@@ -14,12 +15,12 @@ public class GetFieldValue{
 
         Class cl = Employee.class;
         Field field = cl.getDeclaredField("name");
-        field.setAccessible(true); //因为name是一个private的， 不写这句会有IllegalAccessException错误
+        field.setAccessible(true); //因为name是一个private的， 不写这句会有IllegalAccessException错误， 暴力访问
         Object v = field.get(a);
         System.out.println(v);
 
         Field field2 = cl.getDeclaredField("salary");
-        field2.setAccessible(true); //因为name是一个private的， 不写这句会有IllegalAccessException错误
+        field2.setAccessible(true); //因为name是一个private的， 不写这句会有IllegalAccessException错误， 暴力访问
         //获取
         Object v2 = field2.get(a);
         Object v22 = field2.getDouble(a);

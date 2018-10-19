@@ -1,19 +1,24 @@
 package frameworkTest.log;
+
 import Vo.Person;
 
 /**
  * 如何控制日志信息的输出？
+ *
+ * 注释掉的部分， 是利用本程序进行配置的， 注释掉以后， log4j.properties文件默认从src的根目录读取
  * Created by xjlin on 2017/6/4.
  */
 import org.apache.log4j.*;
 
-public class UseLog4j {
+public class UseLog4j{
     //日志记录器
-    private static Logger LOGGER = LogManager.getLogger(UseLog4j.class);
+//    private static Logger LOGGER = LogManager.getLogger(UseLog4j.class);
+    private static Logger LOGGER =  Logger.getLogger(UseLog4j.class);
     //循环次数
     private static long CYCLE = 102;
+
     //程序入口——主函数
-    public static void main(String[]args){
+    public static void main(String[] args){
         long startTime = System.currentTimeMillis();
         /**
          * 使用自定义的log4j的环境配置
@@ -47,7 +52,8 @@ public class UseLog4j {
          *
          */
         //试验，并查看日志格式化后的效果
-        //String pattern = "[1]%t - [2]%p - [3]%r - [4]%c - [5]%F - [6]%d  - [7]%L - [8]%l - [9]%% - [10]%M  - [11]%m[12]%n"; //运行程序看看，是不是我们期待的日志输出样子
+//        String pattern = "[1]%t - [2]%p - [3]%r - [4]%c - [5]%F - [6]%d  - [7]%L - [8]%l - [9]%% - [10]%M  - [11]%m[12]%n";
+        // 运行程序看看，是不是我们期待的日志输出样子
         //试验，并查看日志格式化后的效果
         String pattern = "[1]%-10p - [2]%10p - [3]%.3p  - [4]%-10.3p - [5]%10.3p 。 %n"; //运行程序看看，是不是我们期待的日志输出样子
 
@@ -58,7 +64,8 @@ public class UseLog4j {
          * 3）org.apache.log4j.SimpleLayout（包含日志信息的级别和信息字符串），
          * 4）org.apache.log4j.TTCCLayout（包含日志产生的时间、线程、类别等等信息）
          */
-        Layout layout = new PatternLayout(pattern);
+//        Layout layout = new PatternLayout(pattern);
+//        Layout layout_file = new PatternLayout()
 
         /**
          * 三：定义日志输出的目的地，日志输出的目的地主要中以下几种（通过官方文档我们会发现还有好多种类的）：
@@ -68,10 +75,11 @@ public class UseLog4j {
          * 4）org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件，这个在我的实际工作中也是最常用的），
          * 5）org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）
          */
-        Appender appender= new ConsoleAppender(layout);
+//        Appender appender = new ConsoleAppender(layout);
+//        Appender appender = new FileAppender(pattern);
 
         //配置日志输出的定义，主要有三点：1：输出什么级别的日志信息，2：将日志信息输出到那里，3：输出的日志以什么格式展示
-        BasicConfigurator.configure(appender);
+//        BasicConfigurator.configure(appender);
 
         /**
          * 日志输出的级别，主要有以下几种：
@@ -86,19 +94,20 @@ public class UseLog4j {
          *
          * 日志的级别之间的大小关系如右所示：ALL < TRACE < DEBUG < INFO < WARN < ERROR < FATAL < OFF
          */
-        for(int i=0;i<CYCLE;i++){
-            if(i<100){
+        for(int i = 0; i < CYCLE; i++){
+            if(i < 100){
                 try{
-                    LOGGER.info(new Person("godtrue",100/i,'M'));//打印对象的信息
+                    LOGGER.info(new Person("godtrue", 100 / i, 'M'));//打印对象的信息
                 }catch(Exception e){
-                    LOGGER.error(i+"岁的小孩还不存在嘛！");//打印对象的信息
+                    LOGGER.error(i + "岁的小孩还不存在嘛！");//打印对象的信息
                 }finally{
                     LOGGER.warn("现在大部分人的年龄都在0到100岁之间的!");//打印对象的信息
                 }
             }else{
-                LOGGER.info("我是一棵树，我今年活了"+i+"岁!哈哈，我厉害吧！");//打印对象的信息
+                LOGGER.info("我是一棵树，我今年活了" + i + "岁!哈哈，我厉害吧！");//打印对象的信息
+//                LOGGER.info("我是一棵树");
             }
         }
-        LOGGER.debug("此程序的运行时间是："+(System.currentTimeMillis()-startTime));//打印程序运行的时间
+        LOGGER.debug("此程序的运行时间是：" + (System.currentTimeMillis() - startTime));//打印程序运行的时间
     }
 }

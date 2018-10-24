@@ -1,4 +1,4 @@
-package cn.itcast.otherio.datastream;
+package basic.io.otherIO;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

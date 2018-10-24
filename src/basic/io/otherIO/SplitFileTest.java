@@ -16,7 +16,9 @@ public class SplitFileTest {
 
 		/*
 		 * 文件切割器。
-		 * 一个读取流，对应多个输出流。而且生成的碎片文件都有有序的编号。
+		 * 一个读取流，对应多个输出流。
+		 * 而且生成的碎片文件都有有序的编号。
+		 * 同时生成一个proterties文件
 		 */
 		
 		File srcFile = new File("D:\\test\\splitFileTest\\test.flac");

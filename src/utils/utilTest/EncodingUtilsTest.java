@@ -18,7 +18,7 @@ public class EncodingUtilsTest{
 //        System.out.println(EncodingUtils.getDefaultCharset()); //UTF-8
 //        System.out.println(EncodingUtils.getAvailableCharset());
 //        EncodingUtils.printAvailableCharset();
-//        EncodingUtils.printAvailableCharset2();
+        EncodingUtils.printAvailableCharset2();
 
 //        Collection<Charset> availableCharsetSet = EncodingUtils.getAvailableCharsetSet();
 //        for(Iterator it = availableCharsetSet.iterator(); it.hasNext(); ){

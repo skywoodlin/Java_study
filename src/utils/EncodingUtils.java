@@ -1,5 +1,7 @@
 package utils;
 
+import org.junit.Test;
+
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Array;
 import java.nio.charset.Charset;
@@ -22,6 +24,7 @@ public class EncodingUtils{
      * @param str   待操作的字符串
      * @param encodingName 字符集名称
      */
+    @Test
     public static void printByteLength(String str, String encodingName){
         System.out.print("字节数 : ");
         try{

@@ -1,4 +1,4 @@
-package cn.itcast.otherio.bytearraystream;
+package basic.io.otherIO;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

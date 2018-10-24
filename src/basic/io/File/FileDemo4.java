@@ -31,7 +31,7 @@ public class FileDemo4{
         }
 
         //第二种方式, 传入过滤器, 返回文件夹下所有非隐藏的后缀名为SUFFIX文件
-        String[] names = dir.list(new FilterBySuffix(".java"));
+        String[] names = dir.list(new FilenameFilterBySuffix(".java"));
         for(String name : names){
             System.out.println(name);
         }

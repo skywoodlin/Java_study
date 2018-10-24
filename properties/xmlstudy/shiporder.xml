@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<iskywoodlin:shiporder xmlns:iskywoodlin="www.skywoodlin.com"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="www.skywoodlin.com shiporder.xsd" orderid="asdf" >
+	<iskywoodlin:orderperson>asdf</iskywoodlin:orderperson>
+	<iskywoodlin:shipto>
+		<iskywoodlin:name>zzzz</iskywoodlin:name>
+		<iskywoodlin:address>ssss</iskywoodlin:address>
+		<iskywoodlin:city>sdfdf</iskywoodlin:city>
+		<iskywoodlin:country>sdfdf</iskywoodlin:country>
+	</iskywoodlin:shipto>
+	<iskywoodlin:item>
+		<iskywoodlin:title>sadfdsf</iskywoodlin:title>
+		<iskywoodlin:note>sdfdsfdsf</iskywoodlin:note>
+		<iskywoodlin:quantity>10</iskywoodlin:quantity>
+		<iskywoodlin:price>100.99</iskywoodlin:price>
+	</iskywoodlin:item>
+	<iskywoodlin:item>
+		<iskywoodlin:title>sadfdsf</iskywoodlin:title>
+		<iskywoodlin:note>sdfdsfdsf</iskywoodlin:note>
+		<iskywoodlin:quantity>10</iskywoodlin:quantity>
+		<iskywoodlin:price>100.99</iskywoodlin:price>
+	</iskywoodlin:item>
+    <iskywoodlin:item>
+        <iskywoodlin:title>a</iskywoodlin:title>
+        <iskywoodlin:quantity>2</iskywoodlin:quantity>
+        <iskywoodlin:price>5</iskywoodlin:price>
+    </iskywoodlin:item>
+
+</iskywoodlin:shiporder>

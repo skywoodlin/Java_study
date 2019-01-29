@@ -3,7 +3,8 @@ package utils;
 import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Array;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,7 +22,8 @@ public class EncodingUtils{
 
     /**
      * 打印不同字符集下Java字符串所占的字节数
-     * @param str   待操作的字符串
+     *
+     * @param str          待操作的字符串
      * @param encodingName 字符集名称
      */
     @Test
@@ -120,4 +122,26 @@ public class EncodingUtils{
         Collection<Charset> charsets = charsetMap.values();
         return charsets;
     }
+
+    /**
+     * 进行url编码
+     * @param url     要编码的url
+     * @param charset 编码方式： utf-8, gbk等
+     * @return
+     */
+    public static String encodeUrl(String url, String charset) throws UnsupportedEncodingException{
+        return URLEncoder.encode(url, charset);
+    }
+
+    /**
+     * 进行url解码
+     * @param url     要解码的url
+     * @param charset 解码方式： utf-8, gbk等
+     * @return
+     */
+    public static String decodeUrl(String url, String charset) throws UnsupportedEncodingException{
+        return URLDecoder.decode(url, charset);
+    }
+
+
 }

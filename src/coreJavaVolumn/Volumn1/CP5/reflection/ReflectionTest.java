@@ -9,6 +9,8 @@ import java.util.Scanner;
 /**
  * Created by xjlin on 2018/8/28.
  * 书上的主程序： 电子书：P213
+ *
+ * 根据class文件反向解析出类中的所有构造器，属性， 以及方法的程序
  */
 public class ReflectionTest{
     public static void main(String[] args)

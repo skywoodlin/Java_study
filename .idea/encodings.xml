@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with NO BOM">
+    <file url="file://$PROJECT_DIR$/rt_debug" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/basic/io/homework2/MyBufferedReader.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/basic/io/homework2/MyBufferedReaderDemo.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/basic/io/homework2/MyBufferedReaderWithLineDemo.java" charset="UTF-8" />
@@ -8,6 +9,7 @@
     <file url="file://$PROJECT_DIR$/src/coreJavaVolumn/Volumn1/CP5/reflection/usbTest/KeyByUSB.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/coreJavaVolumn/Volumn1/CP5/reflection/usbTest/NoteBook.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/coreJavaVolumn/Volumn1/CP5/reflection/usbTest/NoteBookMain.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/coreJavaVolumn/Volumn1/CP5/reflection/usbTest/USB.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/utils/utilTest/EncodingUtilsTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/utils/utilTest/ToBinaryStringUtilsTest.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />

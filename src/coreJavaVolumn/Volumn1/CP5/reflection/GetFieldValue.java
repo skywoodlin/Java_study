@@ -23,7 +23,7 @@ public class GetFieldValue{
         field2.setAccessible(true); //因为name是一个private的， 不写这句会有IllegalAccessException错误， 暴力访问
         //获取
         Object v2 = field2.get(a);
-        Object v22 = field2.getDouble(a);
+        double v22 = field2.getDouble(a);
         System.out.println(v2);
         System.out.println(v22);
 

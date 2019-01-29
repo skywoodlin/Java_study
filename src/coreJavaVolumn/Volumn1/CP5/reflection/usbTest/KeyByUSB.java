@@ -4,7 +4,7 @@ public class KeyByUSB implements USB {
 
 	@Override
 	public void close() {
-		System.out.println("key close 我");
+		System.out.println("key close");
 	}
 
 	@Override

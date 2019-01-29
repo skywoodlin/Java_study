@@ -14,7 +14,7 @@ public class FileFilterDemo{
         File dir = new File(DIR);
         File[] files = dir.listFiles(new FilterByFile());
         for(File file: files) {
-            System.out.println(file.getName() +" "+ file.length());
+            System.out.println(file.getAbsolutePath() +" "+ file.length());
         }
         System.out.println(dir.getName()); //根目录没有名字
         if("".equals(dir.getName())){

@@ -1,0 +1,8 @@
+<!ELEMENT 书架 ANY>
+<!--需要按顺序吗？-->
+<!ELEMENT 书 ANY>
+<!ELEMENT 书名 (#PCDDATA)>
+<!ELEMENT 作者 (#PCDDATA)>
+<!ELEMENT 售价 (#PCDDATA)>
+<!ELEMENT test (#PCDDATA)>
+<!ELEMENT test2 (#PCDDATA)>

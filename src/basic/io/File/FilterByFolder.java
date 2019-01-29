@@ -10,6 +10,6 @@ import java.io.FileFilter;
 public class FilterByFolder implements FileFilter{
     @Override
     public boolean accept(File pathname){
-        return pathname.isDirectory();
+        return !pathname.isHidden() && pathname.isDirectory();
     }
 }

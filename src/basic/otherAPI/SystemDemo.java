@@ -5,6 +5,7 @@ import java.util.Properties;
 
 /**
  * Created by xjlin on 2018/9/10.
+ * 输出System的各种参数
  */
 public class SystemDemo{
     private static final String FILE_SEPARATOR = System.getProperty("file.separator");

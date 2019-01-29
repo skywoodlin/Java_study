@@ -25,14 +25,20 @@ import java.io.OutputStreamWriter;
  */
 public class EncodingConverter{
     private static final String SUFFIX = ".java";
-    private static final String FILENAME = "N:\\百度云下载\\2、java web mysql jdbc ajax jquery（非常重要必须重点学习）\\day03";
+    private static final String FILENAME = "N:\\百度云下载\\2、java web mysql jdbc ajax " +
+            "jquery（非常重要必须重点学习）\\day19\\day19\\源码\\Estore\\src\\com\\itheima\\";
 
 
     public static void main(String[] args) throws IOException{
         File file = new File(FILENAME);
         try{
-            convertFileWithEncoding2(file, "GBK", "UTF-8", ".java");
-        }catch(IOException e){
+//            convertFileWithEncoding2(file, "GBK", "UTF-8", ".java"); //只转java文件
+//            convertFileWithEncoding2(file, "GBK", "UTF-8", SUFFIX); //转所有文件
+//            convertFileWithEncoding2(file, "GBK", "UTF-8", ".xml"); //转所有文件
+//            convertFileWithEncoding2(file, "GBK", "UTF-8", ".properties"); //转所有文件
+//            convertFileWithEncoding2(file, "GBK", "UTF-8", ".jsp"); //转所有文件
+            convertFileWithEncoding2(file, "GBK", "UTF-8", ".java"); //转所有文件
+        }catch(Exception e){
             e.printStackTrace();
         }
     }
@@ -45,16 +51,16 @@ public class EncodingConverter{
      * @throws IOException
      */
     public static void convertFileWithEncoding(File file, String oriEncoding, String destEncoding, String suffix) throws
-            IOException{
+            Exception{
+
+        if(StringUtils.isEmpty(suffix)) {
+            throw new Exception("必须输入后缀名以便过滤， 防止误操作！");
+        }
+
         if(file.exists()){
             //文件夹
             if(file.isDirectory()){
-                File[] files = null;
-                if(StringUtils.isNotEmpty(suffix)){
-                    files = file.listFiles(new FilenameFilterBySuffix(SUFFIX));
-                }else{
-                    files = file.listFiles();
-                }
+                File[] files = file.listFiles(new FilenameFilterBySuffix(suffix));
 
                 for(File tmpFile : files){
                     convertFileWithEncoding(tmpFile, oriEncoding, destEncoding, suffix);
@@ -70,7 +76,8 @@ public class EncodingConverter{
             }else{
                 //文件转换， 注意写法
                 BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), oriEncoding));
-                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file + "." + destEncoding),
+                BufferedWriter bw =
+                        new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file.getAbsolutePath() + "." + destEncoding),
                         destEncoding));
 
                 String line = null;
@@ -85,21 +92,34 @@ public class EncodingConverter{
 
                 br.close();
                 bw.close();
+
+                String oriFileName = file.getAbsolutePath();
+                String destFileName = oriFileName + "." + destEncoding;
+
+                //删除原文件成功后
+                if(file.delete()) {
+                    File destFile = new File(destFileName);
+                    if(destFile.exists()) {
+                        if(!destFile.renameTo(new File(oriFileName))) {
+                            System.out.println(destFileName + "重命名为" + oriFileName + "失败！");
+                        }
+                    }
+                }
             }
         }
     }
 
     public static void convertFileWithEncoding2(File file, String oriEncoding, String destEncoding, String suffix) throws
-            IOException{
+            Exception{
+
+        if(StringUtils.isEmpty(suffix)) {
+            throw new Exception("必须输入后缀名以便过滤， 防止误操作！");
+        }
         if(file.exists()){
             //文件夹
             if(file.isDirectory()){
-                File[] files = null;
-                if(StringUtils.isNotEmpty(suffix)){
-                    files = file.listFiles(new FilenameFilterBySuffix(SUFFIX));
-                }else{
-                    files = file.listFiles();
-                }
+                //处理文件夹中的文件（不包含文件夹中的文件夹）
+                File[] files = file.listFiles(new FilenameFilterBySuffix(suffix));
 
                 for(File tmpFile : files){
                     convertFileWithEncoding2(tmpFile, oriEncoding, destEncoding, suffix);
@@ -115,29 +135,43 @@ public class EncodingConverter{
             }else{
                 InputStreamReader fr = null;
                 OutputStreamWriter fw = null;
-                try {
-                    fr = new InputStreamReader(new FileInputStream(file),oriEncoding);//读
+                try{
+                    fr = new InputStreamReader(new FileInputStream(file), oriEncoding);//读
                     fw = new OutputStreamWriter(new FileOutputStream(file + "." + destEncoding), destEncoding);//写
                     char[] buf = new char[1024];//缓冲区
                     int len;
-                    while ((len = fr.read(buf)) != -1) {
+                    while((len = fr.read(buf)) != -1){
                         fw.write(buf, 0, len);//读几个写几个
                     }
-                } catch (IOException e) {
+                }catch(IOException e){
                     e.printStackTrace();
-                } finally {
-                    if (fr != null) {
-                        try {
+                }finally{
+                    if(fr != null){
+                        try{
                             fr.close();
-                        } catch (IOException e) {
+                        }catch(IOException e){
                             e.printStackTrace();
                         }
                     }
-                    if (fw != null) {
-                        try {
+                    if(fw != null){
+                        try{
                             fw.flush();
                             fw.close();
-                        } catch (IOException e) {
+
+
+                            String oriFileName = file.getAbsolutePath();
+                            String destFileName = oriFileName + "." + destEncoding;
+
+                            //删除原文件成功后
+                            if(file.delete()) {
+                                File destFile = new File(destFileName);
+                                if(destFile.exists()) {
+                                    if(!destFile.renameTo(new File(oriFileName))) {
+                                        System.out.println(destFileName + "重命名为" + oriFileName + "失败！");
+                                    }
+                                }
+                            }
+                        }catch(IOException e){
                             e.printStackTrace();
                         }
                     }

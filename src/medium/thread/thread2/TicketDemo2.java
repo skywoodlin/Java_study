@@ -5,6 +5,7 @@ package medium.thread.thread2;
  * 创建线程的第二种方式， 实现runnable接口。
  * 1.
  */
+@SuppressWarnings("deprecation")
 public class TicketDemo2{
     public static void main(String[] args){
         SaleTicket2 t = new SaleTicket2();
@@ -20,7 +21,7 @@ public class TicketDemo2{
         t4.start();
     }
 }
-
+@SuppressWarnings("deprecation")
 class SaleTicket2 implements Runnable{
     private int tickets = 100;
 

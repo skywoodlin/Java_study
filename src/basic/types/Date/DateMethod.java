@@ -6,6 +6,7 @@ import java.util.Date;
  * Created by xjlin on 2017/5/19.
  */
 public class DateMethod {
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         Date now = new Date();
 
